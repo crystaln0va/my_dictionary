@@ -8,5 +8,4 @@ function connectDb() {
 
 module.exports = {
     connectDb: connectDb,
-    //getData: getData
 }
