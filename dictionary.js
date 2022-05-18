@@ -28,11 +28,6 @@ app.get("/dict.js", (req, res) => {
     res.sendFile(__dirname + "/dict.js");
 })
 
-// app.get("/search-word", (req, res) => {
-//     const searchWord = req.query.searchWord;
-//     getData(searchWord);
-// })
-
 app.get('/search-word', function (req, res) {
     const searchWord = req.query.searchWord;
     let sql = `SELECT * FROM entries.entries Where word = '${searchWord}'`;
@@ -45,11 +40,3 @@ app.get('/search-word', function (req, res) {
         })
     })
 });
-
-// function getData(searchWord) {
-//     let sql = `SELECT * FROM entries.entries Where definition like '${searchWord}%'`;
-//     console.log(sql);
-//     let result = wordDb.getData(sql);
-//     // console.log(result);
-//     return result;
-// }
